@@ -20,11 +20,8 @@ type Datum {
 validator {
   fn contract(datum: Datum, _redeemer: Void, ctx: ScriptContext) {
     let ScriptContext { transaction, purpose } = ctx
-
     let Transaction { outputs, .. } = transaction
-
     let seller_sign = must_be_signed_by(transaction, datum.seller)
-
     when purpose is {
       Spend(_) ->
         when seller_sign is {

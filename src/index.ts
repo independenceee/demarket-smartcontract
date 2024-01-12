@@ -9,7 +9,6 @@ import router from "./routers/index.routes";
 dotenv.config()
 const app: Express = express();
 
-
 const start = function () {
     if (!process.env.PORT) {
         process.exit(1);
